@@ -1,0 +1,11 @@
+services:
+  docker-pull-tar:
+    build: .
+    container_name: docker-pull-tar
+    ports:
+      - "7860:7860"
+    environment:
+      - GRADIO_SERVER_NAME=0.0.0.0
+    volumes:
+      - ./downloads:/app/downloads
+    restart: unless-stopped
